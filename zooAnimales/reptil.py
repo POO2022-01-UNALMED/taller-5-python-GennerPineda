@@ -1,12 +1,11 @@
-import zooAnimales.animal as animal
-class Reptil(animal):
+from zooAnimales.animal import Animal
+class Reptil(Animal):
     iguanas = 0
     serpientes = 0
     listado = []
     totalAnimales = 0
-    def __init__(self, nombre, edad, habitat, genero, zona, listado, colorEscamas, largoCola):
-        super().__init__(nombre, edad, habitat, genero, zona)
-        self._listado = listado
+    def __init__(self, nombre, edad, habitat, genero, colorEscamas, largoCola):
+        super().__init__(nombre, edad, habitat, genero)
         self._colorEscamas = colorEscamas
         self._largoCola = largoCola
         Reptil.listado.append(self)
@@ -16,13 +15,13 @@ class Reptil(animal):
     def movimiento(self):
         return "reptar"
     @classmethod
-    def crearIguana(cls, nombre, edad, genero,zona, listado):
+    def crearIguana(cls, nombre, edad, genero):
         cls.iguanas += 1
-        return Reptil(nombre, edad, "humedal", genero, zona, listado, "verde", 3)
+        return Reptil(nombre, edad, "humedal", genero, "verde", 3)
     @classmethod 
-    def crearSerpiente(cls,nombre, edad, genero,zona, listado):
+    def crearSerpiente(cls,nombre, edad, genero):
         cls.serpientes +=1 
-        return Reptil(nombre, edad, "jungla", genero, zona, listado, "blanco", 1)
+        return Reptil(nombre, edad, "jungla", genero, "blanco", 1)
 
     @classmethod
     def setListado(cls, listado):

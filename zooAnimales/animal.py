@@ -1,13 +1,7 @@
-import zooAnimales.mamifero as mamifero
-import zooAnimales.anfibio as anfibio
-import zooAnimales.ave as ave
-import zooAnimales.mamifero as mamifero
-import zooAnimales.pez as pez
-import zooAnimales.reptil as reptil
 
-class Animal():
+class Animal:
     _totalAnimales = 0
-    def __init__(self, nombre, edad, habitat, genero, zona):
+    def __init__(self, nombre, edad, habitat, genero, zona = None):
         self._nombre = nombre
         self._edad = edad
         self._habitat = habitat
@@ -17,8 +11,13 @@ class Animal():
     def movimiento(self):
         return "desplazarse"
     def totalPorTipo(self):
-        return("Mamiferos: "+mamifero.totalAnimales+"\nAves: "+ave.totalAnimales+
-        "\nReptiles: "+reptil.totalAnimales+"\nPeces: "+pez.totalAnimales+"\nAnfibio: "+anfibio.totalAnimales)
+        from zooAnimales.mamifero import Mamifero
+        from zooAnimales.anfibio import Anfibio
+        from zooAnimales.ave import Ave
+        from zooAnimales.pez import Pez
+        from zooAnimales.reptil import Reptil
+        return("Mamiferos: "+Mamifero.totalAnimales+"\nAves: "+Ave.totalAnimales+
+        "\nReptiles: "+Reptil.totalAnimales+"\nPeces: "+Pez.totalAnimales+"\nAnfibio: "+Anfibio.totalAnimales)
     def __str__(self):
         if self._zona == None:
             return("Mi nombre es "+self._nombre+", tengo una edad de "+self._edad+", habito en "+self._habitat+" y mi genero es "+self._genero)
