@@ -3,15 +3,15 @@ class Pez(Animal):
     salmones = 0
     bacalaos = 0
     _listado = []
-    totalAnimales = 0
+    totalPeces = 0
     def __init__(self, nombre, edad, habitat, genero, colorEscamas, cantidadAletas):
         super().__init__(nombre, edad, habitat, genero)
         self._colorEscamas = colorEscamas
         self._cantidadAletas = cantidadAletas
         Pez._listado.append(self)
-        Pez.totalAnimales += 1
+        Pez.totalPeces += 1
     def cantidadPeces(self):
-        Pez.totalAnimales
+        Pez.totalPeces
     def movimiento(self):
         return "nadar"
     @classmethod

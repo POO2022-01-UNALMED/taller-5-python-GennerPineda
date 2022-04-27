@@ -3,15 +3,15 @@ class Ave(Animal):
     halcones = 0
     aguilas = 0
     _listado = []
-    totalAnimales = 0
+    totalAves = 0
     def __init__(self, nombre, edad, habitat, genero, colorPlumas):
         super().__init__(nombre, edad, habitat, genero)
         self._colorPlumas = colorPlumas
-        Ave.totalAnimales += 1
+        Ave.totalAves += 1
         Ave._listado.append(self)
         
     def cantidadAves(self):
-        return Ave.totalAnimales
+        return Ave.totalAves
     def movimiento(self):
         return "volar"
     @classmethod

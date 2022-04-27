@@ -3,15 +3,15 @@ class Reptil(Animal):
     iguanas = 0
     serpientes = 0
     listado = []
-    totalAnimales = 0
+    totalReptiles = 0
     def __init__(self, nombre, edad, habitat, genero, colorEscamas, largoCola):
         super().__init__(nombre, edad, habitat, genero)
         self._colorEscamas = colorEscamas
         self._largoCola = largoCola
         Reptil.listado.append(self)
-        Reptil.totalAnimales += 1
+        Reptil.totalReptiles += 1
     def cantidadReptiles(self):
-        return Reptil.totalAnimales
+        return Reptil.totalReptiles
     def movimiento(self):
         return "reptar"
     @classmethod

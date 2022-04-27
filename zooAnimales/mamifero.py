@@ -3,15 +3,15 @@ class Mamifero(Animal):
     _listado = []
     leones = 0
     caballos = 0
-    totalAnimales = 0
+    totalMamiferos = 0
     def __init__(self, nombre, edad, habitat, genero, pelaje, patas):
         super().__init__(nombre, edad, habitat, genero)
         self._pelaje = pelaje
         self._patas = patas
-        Mamifero.totalAnimales += 1
+        Mamifero.totalMamiferos += 1
         Mamifero._listado.append(self)
     def cantidadMamiferos(self):
-        return Mamifero.totalAnimales
+        return Mamifero.totalMamiferos
     @classmethod
     def crearCaballo(cls, nombre, edad, genero):
         cls.caballos += 1

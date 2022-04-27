@@ -3,16 +3,16 @@ class Anfibio(Animal):
     ranas = 0
     salamandras = 0
     _listado = []
-    totalAnimales = 0
+    totalAnfibios = 0
     def __init__(self, nombre, edad, habitat, genero, colorPiel, venenoso):
         super().__init__(nombre, edad, habitat, genero)
         self._colorPiel = colorPiel
         self._venenoso = venenoso
         Anfibio._listado.append(self)
-        Anfibio.totalAnimales+=1
+        Anfibio.totalAnfibios +=1
         
     def cantidadAnfibios(self):
-        return Anfibio.totalAnimales
+        return Anfibio.totalAnfibios
     def movimiento(self):
         return "saltar"
     @classmethod

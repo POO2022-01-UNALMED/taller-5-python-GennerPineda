@@ -10,19 +10,20 @@ class Animal:
         Animal._totalAnimales+=1
     def movimiento(self):
         return "desplazarse"
-    def totalPorTipo(self):
+    @classmethod
+    def totalPorTipo(cls):
         from zooAnimales.mamifero import Mamifero
         from zooAnimales.anfibio import Anfibio
         from zooAnimales.ave import Ave
         from zooAnimales.pez import Pez
         from zooAnimales.reptil import Reptil
-        return("Mamiferos: "+Mamifero.totalAnimales+"\nAves: "+Ave.totalAnimales+
-        "\nReptiles: "+Reptil.totalAnimales+"\nPeces: "+Pez.totalAnimales+"\nAnfibio: "+Anfibio.totalAnimales)
-    def __str__(self):
+        return("Mamiferos : "+str(Mamifero.totalMamiferos)+"\nAves : "+str(Ave.totalAves)+
+        "\nReptiles : "+str(Reptil.totalReptiles)+"\nPeces : "+str(Pez.totalPeces)+"\nAnfibios : "+str(Anfibio.totalAnfibios))
+    def toString(self):
         if self._zona == None:
-            return("Mi nombre es "+self._nombre+", tengo una edad de "+self._edad+", habito en "+self._habitat+" y mi genero es "+self._genero)
+            return("Mi nombre es "+str(self._nombre)+", tengo una edad de "+str(self._edad)+", habito en "+str(self._habitat)+" y mi genero es "+str(self._genero))
         else:
-            return("Mi nombre es "+self._nombre+", tengo una edad de "+self._edad+", habito en "+self._habitat+" y mi genero es "+self._genero+" la zona en la que me ubico es "+self._zona+" en el "+self)
+            return("Mi nombre es "+str(self._nombre)+", tengo una edad de "+str(self._edad)+", habito en "+str(self._habitat)+" y mi genero es "+str(self._genero)+" la zona en la que me ubico es "+str(self._zona))
     @classmethod
     def setTotalAnimales(cls, num):
         Animal._totalAnimales = num 
