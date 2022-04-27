@@ -34,6 +34,12 @@ class Animal:
     def getNombre(self):
         return self._nombre
 
+    def setGenero(self, genero):
+        self._genero = genero
+    def getGenero(self):
+        return self._genero
+
+
     def setEdad(self, edad):
         self._edad = edad
     def getEdad(self):

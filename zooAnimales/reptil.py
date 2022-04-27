@@ -37,6 +37,6 @@ class Reptil(Animal):
 
     def setLargoCola(self, largoCola):
         self._largoCola = largoCola
-    def getColorPlumas(self):
+    def getLargoCola(self):
         return self._largoCola
 

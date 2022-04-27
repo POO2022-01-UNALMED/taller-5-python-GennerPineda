@@ -37,7 +37,7 @@ class Anfibio(Animal):
 
     def setVenenoso(self, venenoso):
         self._venenoso = venenoso
-    def getColorPiel(self):
+    def getVenenoso(self):
         return self._venenoso
 
     def isVenenoso(self):
